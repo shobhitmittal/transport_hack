@@ -1,0 +1,32 @@
+<html>
+<center>
+<b><p style="font-size:250%">Welcome to Travel Booking.</p></b>
+<form action="/choose_botsink_type" method="post">{% csrf_token %}
+    <label for="Enter the Configurations"><b><font size=5>Select the TEST Type</font></b></label>
+    <br><br>
+    <br><br>
+    <!--
+    <label for="Enter the Configurations"><b><font size=5>Enter the Configurations</font></b></label>
+    <br><br>
+    <br><br>
+    <label for="Hostname">Hostname </label>
+    <input id="hostname" type="text" name="hostname" value='{{ automation_config.BotSink.hostname }}' required>
+    <br><br>
+    <label for="Username">Username </label>
+    <input id="username" type="text" name="username" value='{{ automation_config.BotSink.username }}' required>
+    <br><br>
+    <label for="Password">Password </label>
+    <input id="password" type="text" name="password" value='{{ automation_config.BotSink.password }}' required>
+    <br><br>
+    -->
+    <select name='test_type' required>
+    <option value="None" disabled="disabled" selected="selected">Please select the Test Type</option>
+    {% for option in options %}
+    <option value="{{ option }}">{{ option }}</option>
+    {% endfor %}
+    </select>
+    <br><br>
+    <br><br>
+    <input type="submit" value="Click to Enter the details">
+</form>
+</html>

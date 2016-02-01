@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from trans import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.home_page, name='home_page'),
+    url(r'^api_v1_rlwy_parse$', views.api_v1_rlwy_parse, name='api_v1_rlwy_parse'),
+    url(r'^get_pnr_status$', views.get_pnr_status, name='get_pnr_status'),
 ]
